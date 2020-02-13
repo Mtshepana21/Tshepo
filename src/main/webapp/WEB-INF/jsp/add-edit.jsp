@@ -12,7 +12,7 @@
  <link rel = "stylesheet" href = "/css/mystyles.css">
 </head>
 <body>
-<h2>${modeTitle} Todo</h2>
+<h2>${modeTitle} Todo</h2>-
 <form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post" modelAttribute="todo">
     <form:hidden path="id"/>
     <div class = "form-group">
