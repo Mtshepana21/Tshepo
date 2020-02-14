@@ -12,6 +12,11 @@
  <link rel = "stylesheet" href = "/css/mystyles.css">
 </head>
 <body>
+	<dvi class="container h-100">
+	<div class="d-flex justify-content-center">
+		<div class="card mt-5 col-md-4 animated bounceInDown myForm">
+			<div class="card-header">
+			</div>
 <h2>${modeTitle} Todo</h2>-
 <form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post" modelAttribute="todo">
     <form:hidden path="id"/>
