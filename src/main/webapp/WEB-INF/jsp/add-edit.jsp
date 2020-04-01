@@ -12,7 +12,7 @@
  <link rel = "stylesheet" href = "/css/mystyles.css">
 </head>
 <body>
-	<dvi class="container h-100">
+	<div class="container h-100">
 	<div class="d-flex justify-content-center">
 		<div class="card mt-5 col-md-4 animated bounceInDown myForm">
 			<div class="card-header">
@@ -24,12 +24,22 @@
                 <form:label path="title" class = "lab">Title</form:label>
                 <form:input path="title" ></form:input>
                 <form:errors path="title"></form:errors>
-            </div>
+                </div>
+
+                <div class = "form-group">
+                <label class = "lab">Type</label>
+                &nbsp;
+                <form:select path="type">
+               <form:option value="NONE" label="--- Select ---" />"
+                         <form:options items="${TodoType}" />
+                             </div>
+
             <div class = "form-group">
                 <form:label path="description" class = "lab">Description</form:label>
-                <form:textarea path="description" cols="40" rows="25"></form:textarea>
+                <form:textarea path="description" cols="45" rows="5"></form:textarea>
                 <form:errors path="description"></form:errors>
           </div>
+
           <div class = "form-group">
                 <label class = "lab">Actions</label>
             </div>
@@ -38,7 +48,7 @@
                 &nbsp;
                 <button type = "Submit" class = "btn btn-primary">Submit</button>
             </div>
-
+</form:select>
 </form:form>
 </body>
 </html>

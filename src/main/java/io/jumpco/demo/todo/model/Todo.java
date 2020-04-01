@@ -29,6 +29,8 @@ public class Todo {
     @NotNull
     private int order;
 
+    private TodoType type;
+
     public Long getId() {
         return id;
     }
@@ -87,6 +89,14 @@ public class Todo {
         return result;
     }
 
+    public TodoType getType() {
+        return type;
+    }
+
+    public void setType(TodoType type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", Todo.class.getSimpleName() + "[", "]")
@@ -96,5 +106,6 @@ public class Todo {
                 .add("completed=" + completed)
                 .add("order=" + order)
                 .toString();
+
     }
 }
