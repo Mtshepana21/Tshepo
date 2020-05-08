@@ -56,11 +56,22 @@ public class TodoController {
         return home();
     }
 
-    @PostMapping("/todo/update")
-    public View update(@Valid @ModelAttribute Todo todo) throws EntityNotFoundException {
-        todoService.update(todo);
-        return home();
+   // @PostMapping("/todo/update")
+    //public View update(@Valid @ModelAttribute Todo todo) throws EntityNotFoundException {
+      //  todoService.update(todo);
+        //return home ();
 
+    @PostMapping("/todo/update")
+    public ModelAndView update(@Valid @ModelAttribute Todo todo, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()){
+            ModelAndView results = new ModelAndView("add-edit");
+            results.addAllObjects(model.asMap());
+            results.addObject("mode", "update");
+            results.addObject("modeTitle", "Update");
+            return results;
+    }
+        todoService.create(todo);
+        return new ModelAndView("redirect:/");
     }
 
    @PostMapping("/todo/add")

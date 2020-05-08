@@ -30,6 +30,7 @@ public class Todo {
     private int order;
 
     private TodoType type;
+    private TodoStatus status;
 
     public Long getId() {
         return id;
@@ -95,6 +96,14 @@ public class Todo {
 
     public void setType(TodoType type) {
         this.type = type;
+    }
+
+    public TodoStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TodoStatus status) {
+        this.status = status;
     }
 
     @Override
